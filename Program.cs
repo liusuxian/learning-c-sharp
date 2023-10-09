@@ -1,5 +1,5 @@
 ﻿using System;
-using RectangleApplication;
+using RectangleNamespace;
 
 namespace LearningCSharp
 {

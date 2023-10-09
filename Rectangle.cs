@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace RectangleApplication
+namespace RectangleNamespace
 {
     public class Rectangle
     {
