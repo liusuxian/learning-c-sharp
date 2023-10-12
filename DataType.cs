@@ -5,70 +5,107 @@ namespace DataTypeNamespace
   public class DataType
   {
     // 布尔值，True 或 False，默认 False
-    private bool boolA;
-    private bool boolB;
+    private bool boolValA;
+    private bool boolValB;
     // 8 位无符号整数，0 到 255，默认 0
-    private byte byteA;
+    private byte byteVal;
     // 16 位 Unicode 字符，U +0000 到 U +ffff，默认 '\0'
-    private char charA;
+    private char charVal;
     // 128 位精确的十进制值，28-29 有效位数，(-7.9 x 1028 到 7.9 x 1028) / 100 到 28，默认 0.0M
-    private decimal decimalA;
+    private decimal decimalVal;
     // 64 位双精度浮点型，(+/-)5.0 x 10-324 到 (+/-)1.7 x 10308，默认 0.0D
-    private double doubleA;
+    private double doubleVal;
     // 32 位单精度浮点型，-3.4 x 1038 到 + 3.4 x 1038，默认 0.0F
-    private float floatA;
+    private float floatVal;
     // 32 位有符号整数类型，-2,147,483,648 到 2,147,483,647，默认 0
-    private int intA;
+    private int intVal;
     // 64 位有符号整数类型，-9,223,372,036,854,775,808 到 9,223,372,036,854,775,807，默认 0L
-    private long longA;
+    private long longVal;
     // 8 位有符号整数类型，-128 到 127，默认 0
-    private sbyte sbyteA;
+    private sbyte sbyteVal;
     // 16 位有符号整数类型，-32,768 到 32,767，默认 0
-    private short shortA;
+    private short shortVal;
     // 32 位无符号整数类型，0 到 4,294,967,295，默认 0
-    private uint uintA;
+    private uint uintVal;
     // 64 位无符号整数类型，0 到 18,446,744,073,709,551,615，默认 0
-    private ulong ulongA;
+    private ulong ulongVal;
     // 16 位无符号整数类型，0 到 65,535，默认 0
-    private ushort ushortA;
-    // 初始化数据
-    public void InitData()
+    private ushort ushortVal;
+    // 引用类型，对象（Object）类型
+    private object? objVal;
+    // 引用类型，动态（Dynamic）类型
+    private dynamic? dynamicVal;
+    // 引用类型，字符串（String）类型
+    private String? strValA;
+    private String? strValB;
+    private String? strValC;
+    private String? strValD;
+    private String? strValE;
+    // 初始化基础类型数据
+    public void InitBaseData()
     {
-      boolA = true;
-      boolB = false;
-      byteA = 96;
-      charA = '我';
-      decimalA = 100;
-      doubleA = 3.14;
-      floatA = (float)3.14;
-      intA = 99;
-      longA = 10000000000000000;
-      sbyteA = 125;
-      shortA = 6666;
-      uintA = 200;
-      ulongA = 20000000000000000;
-      ushortA = 300;
+      boolValA = true;
+      boolValB = false;
+      byteVal = 96;
+      charVal = '我';
+      decimalVal = 100;
+      doubleVal = 3.14;
+      floatVal = (float)3.14;
+      intVal = 99;
+      longVal = 10000000000000000;
+      sbyteVal = 125;
+      shortVal = 6666;
+      uintVal = 200;
+      ulongVal = 20000000000000000;
+      ushortVal = 300;
     }
-    // 显示
-    public void Display()
+    // 初始化引用类型数据
+    public void InitReferenceData()
     {
-      Console.WriteLine("boolA: {0}", boolA);
-      Console.WriteLine("boolB: {0}", boolB);
-      Console.WriteLine("byteA: {0}", byteA);
-      Console.WriteLine("charA: {0}", charA);
-      Console.WriteLine("decimalA: {0}", decimalA);
-      Console.WriteLine("doubleA: {0}", doubleA);
-      Console.WriteLine("floatA: {0}", floatA);
-      Console.WriteLine("intA: {0}", intA);
-      Console.WriteLine("longA: {0}", longA);
-      Console.WriteLine("sbyteA: {0}", sbyteA);
-      Console.WriteLine("shortA: {0}", shortA);
-      Console.WriteLine("uintA: {0}", uintA);
-      Console.WriteLine("ulongA: {0}", ulongA);
-      Console.WriteLine("ushortA: {0}", ushortA);
+      objVal = 100; // 装箱
+      int value = (int)objVal; // 拆箱
+      dynamicVal = "我是中国人1";
+      strValA = "我是中国人2";
+      strValB = "runoob.com";
+      strValC = @"C:\Windows";
+      strValD = "C:\\Windows";
+      strValE = @"<script type=""text/javascript"">
+      <!--
+      -->
+      </script>";
+      Console.WriteLine("InitReferenceData value: {0}", value);
     }
-    // 存储尺寸
-    public void Size()
+    // 显示基础类型数据
+    public void DisplayBaseData()
+    {
+      Console.WriteLine("boolValA: {0}", boolValA);
+      Console.WriteLine("boolValB: {0}", boolValB);
+      Console.WriteLine("byteVal: {0}", byteVal);
+      Console.WriteLine("charVal: {0}", charVal);
+      Console.WriteLine("decimalVal: {0}", decimalVal);
+      Console.WriteLine("doubleVal: {0}", doubleVal);
+      Console.WriteLine("floatVal: {0}", floatVal);
+      Console.WriteLine("intVal: {0}", intVal);
+      Console.WriteLine("longVal: {0}", longVal);
+      Console.WriteLine("sbyteVal: {0}", sbyteVal);
+      Console.WriteLine("shortVal: {0}", shortVal);
+      Console.WriteLine("uintVal: {0}", uintVal);
+      Console.WriteLine("ulongVal: {0}", ulongVal);
+      Console.WriteLine("ushortVal: {0}", ushortVal);
+    }
+    // 显示引用类型数据
+    public void DisplayReferenceData()
+    {
+      Console.WriteLine("objVal: {0}", objVal);
+      Console.WriteLine("dynamicVal: {0}", dynamicVal);
+      Console.WriteLine("strValA: {0}", strValA);
+      Console.WriteLine("strValB: {0}", strValB);
+      Console.WriteLine("strValC: {0}", strValC);
+      Console.WriteLine("strValD: {0}", strValD);
+      Console.WriteLine("strValE: {0}", strValE);
+    }
+    // 基础类型数据存储尺寸
+    public void SizeBaseData()
     {
       Console.WriteLine("Size of bool: {0}", sizeof(bool));
       Console.WriteLine("Size of byte: {0}", sizeof(byte));

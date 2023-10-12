@@ -16,10 +16,14 @@ namespace LearningCSharp
       rectangle.Display();
 
       DataType dataType = new DataType();
-      dataType.Display();
-      dataType.InitData();
-      dataType.Display();
-      dataType.Size();
+      dataType.DisplayBaseData();
+      dataType.InitBaseData();
+      dataType.DisplayBaseData();
+      dataType.SizeBaseData();
+
+      dataType.DisplayReferenceData();
+      dataType.InitReferenceData();
+      dataType.DisplayReferenceData();
     }
   }
 }
