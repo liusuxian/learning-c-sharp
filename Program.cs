@@ -24,6 +24,10 @@ namespace LearningCSharp
       dataType.DisplayReferenceData();
       dataType.InitReferenceData();
       dataType.DisplayReferenceData();
+
+      dataType.DisplayPointerData();
+      dataType.InitPointerData();
+      dataType.DisplayPointerData();
     }
   }
 }

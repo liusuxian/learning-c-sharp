@@ -41,6 +41,9 @@ namespace DataTypeNamespace
     private String? strValC;
     private String? strValD;
     private String? strValE;
+    // 指针类型
+    unsafe private char* cptrVal = null;
+    unsafe private int* iptrVal = null;
     // 初始化基础类型数据
     public void InitBaseData()
     {
@@ -75,6 +78,21 @@ namespace DataTypeNamespace
       </script>";
       Console.WriteLine("InitReferenceData value: {0}", value);
     }
+    // 初始化指针类型数据
+    public void InitPointerData()
+    {
+      unsafe
+      {
+        char c = '中';
+        cptrVal = &c;
+        Console.WriteLine("cptrVal val: {0} ", *cptrVal);
+        Console.WriteLine("cptrVal ptr: 0x{0} ", (int)cptrVal);
+        int i = 100;
+        iptrVal = &i;
+        Console.WriteLine("iptrVal val: {0} ", *iptrVal);
+        Console.WriteLine("iptrVal ptr: 0x{0} ", (int)iptrVal);
+      }
+    }
     // 显示基础类型数据
     public void DisplayBaseData()
     {
@@ -103,6 +121,23 @@ namespace DataTypeNamespace
       Console.WriteLine("strValC: {0}", strValC);
       Console.WriteLine("strValD: {0}", strValD);
       Console.WriteLine("strValE: {0}", strValE);
+    }
+    // 显示指针类型数据
+    public void DisplayPointerData()
+    {
+      unsafe
+      {
+        if (cptrVal != null)
+        {
+          Console.WriteLine("cptrVal val: {0} ", *cptrVal);
+          Console.WriteLine("cptrVal ptr: 0x{0} ", (int)cptrVal);
+        }
+        if (iptrVal != null)
+        {
+          Console.WriteLine("iptrVal val: {0} ", *iptrVal);
+          Console.WriteLine("iptrVal ptr: 0x{0} ", (int)iptrVal);
+        }
+      }
     }
     // 基础类型数据存储尺寸
     public void SizeBaseData()
